@@ -15,7 +15,7 @@ class PostDocumentFactory implements DocumentFactoryInterface
     /**
      * @psalm-param Post $object
      */
-    public function create(object $object, string $locale): array
+    public function create(object $object, ?string $locale = null): array
     {
         return [
             'id' => $object->id,

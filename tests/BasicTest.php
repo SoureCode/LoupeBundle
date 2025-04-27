@@ -60,7 +60,6 @@ class BasicTest extends KernelTestCase
         $result = $loup->search($searchParameters);
 
         // Assert
-        dump($result);
         $this->assertNotEmpty($result->getHits());
     }
 }

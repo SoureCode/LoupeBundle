@@ -4,5 +4,5 @@ namespace SoureCode\Bundle\Loupe\Writer;
 
 interface LoupeWriterInterface
 {
-    public function write(object|array $objects, string $locale): void;
+    public function write(object|array $objects, ?string $locale = null): void;
 }

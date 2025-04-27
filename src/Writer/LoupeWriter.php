@@ -19,8 +19,10 @@ class LoupeWriter implements LoupeWriterInterface
         $this->documentFactories = iterator_to_array($documentFactories);
     }
 
-    public function write(object|array $objects, string $locale): void
+    public function write(object|array $objects, ?string $locale = null): void
     {
+        $locale = $locale ?? 'unlocalized';
+
         if (!is_iterable($objects)) {
             $objects = [$objects];
         }

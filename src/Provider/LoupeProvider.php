@@ -20,8 +20,10 @@ final class LoupeProvider implements LoupeProviderInterface, ResetInterface
     ) {
     }
 
-    public function get(string $className, string $locale): Loupe
+    public function get(string $className, ?string $locale = null): Loupe
     {
+        $locale = $locale ?? 'unlocalized';
+
         if (!isset($this->instances[$className][$locale])) {
             $classMetadata = $this->classMetadataFactory->getMetadataFor($className);
 
